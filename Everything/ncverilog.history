@@ -1,0 +1,2 @@
+s1(01May2020:12:18:35):  ncverilog +access+r tbp.sv 
+s2(01May2020:13:21:58):  ncverilog +libext+.tsbvlibp -y /apps/toshiba/sjsu/verilog/tc240c +access+r tbp_gates.sv 

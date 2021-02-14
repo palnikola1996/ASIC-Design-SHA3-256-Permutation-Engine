@@ -1,0 +1,1299 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/014512836/.synopsys_dv_prefs.tcl
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_sverilog perm.sv
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading sverilog file '/home/014512836/pal/287/proj02/perm.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/014512836/pal/287/proj02/perm.sv
+Opening include file ./param.svh
+Opening include file ./my_pkg.sv
+Opening include file ./theta.sv
+Opening include file ./mod_functions.sv
+Opening include file ./rho.sv
+Opening include file ./mod_functions.sv
+Opening include file ./pie.sv
+Opening include file ./mod_functions.sv
+Opening include file ./chi.sv
+Opening include file ./mod_functions.sv
+Opening include file ./iota.sv
+Opening include file ./permutation.sv
+Opening include file ./string2array.sv
+Opening include file ./array2string.sv
+Warning:  ./string2array.sv:29: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./string2array.sv:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ./pipeline.sv
+Warning:  ./array2string.sv:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./array2string.sv:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./array2string.sv:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./array2string.sv:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./array2string.sv:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./array2string.sv:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./pipeline.sv:19: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+
+Inferred memory devices in process
+	in routine string2array line 22 in file
+		'./string2array.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       Sin_reg       | Flip-flop | 1600  |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Push_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine array2string line 33 in file
+		'./array2string.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       Sin_reg       | Flip-flop | 1600  |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Push_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       Dix_reg       | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pipeline line 12 in file
+		'./pipeline.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop | 1600  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/014512836/pal/287/proj02/perm.db:perm'
+Loaded 10 designs.
+Current design is 'perm'.
+perm theta rho pie chi iota permutation string2array array2string pipeline
+current_design perm
+Current design is 'perm'.
+{perm}
+create_clock clk -name clk -period 3.4875000000000003
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port reset]]
+{dix[2] dix[1] dix[0] din[199] din[198] din[197] din[196] din[195] din[194] din[193] din[192] din[191] din[190] din[189] din[188] din[187] din[186] din[185] din[184] din[183] din[182] din[181] din[180] din[179] din[178] din[177] din[176] din[175] din[174] din[173] din[172] din[171] din[170] din[169] din[168] din[167] din[166] din[165] din[164] din[163] din[162] din[161] din[160] din[159] din[158] din[157] din[156] din[155] din[154] din[153] din[152] din[151] din[150] din[149] din[148] din[147] din[146] din[145] din[144] din[143] din[142] din[141] din[140] din[139] din[138] din[137] din[136] din[135] din[134] din[133] din[132] din[131] din[130] din[129] din[128] din[127] din[126] din[125] din[124] din[123] din[122] din[121] din[120] din[119] din[118] din[117] din[116] din[115] din[114] din[113] din[112] din[111] din[110] din[109] din[108] din[107] din[106] din[105] din[104] din[103] ...}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+set_max_delay 3.255 -from [all_inputs] -to [all_outputs]
+1
+set_host_options -max_cores 4
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25"
+Library analysis succeeded.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.1 |   *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 6319 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+Information: Uniquified 24 instances of design 'permutation'. (OPT-1056)
+Information: Uniquified 24 instances of design 'theta'. (OPT-1056)
+Information: Uniquified 24 instances of design 'rho'. (OPT-1056)
+Information: Uniquified 24 instances of design 'pie'. (OPT-1056)
+Information: Uniquified 24 instances of design 'chi'. (OPT-1056)
+Information: Uniquified 24 instances of design 'iota'. (OPT-1056)
+Information: Uniquified 8 instances of design 'pipeline'. (OPT-1056)
+  Simplifying Design 'perm'
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy str2ary before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy level1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_00/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01/dut1_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01/dut2_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01/dut3_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01/dut4_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_23/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_22/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_21/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_20/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_19/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_18/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_17/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_16/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_15/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_14/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_13/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_12/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_11/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_10/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_09/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_08/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_07/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_06/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_05/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_04/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_03/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_02/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy round_01/dut5_00 before Pass 1 (OPT-776)
+Information: Ungrouping 153 of 155 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+............................................................
+............................................................
+................................................
+  Processing 'perm'
+  Processing 'array2string'
+Information: In design 'array2string', the register 'Dix_reg[22]' is removed because it is merged to 'Dix_reg[21]'. (OPT-1215)
+Information: In design 'array2string', the register 'Dix_reg[23]' is removed because it is merged to 'Dix_reg[21]'. (OPT-1215)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Complementing port 'reset' in design 'array2string'.
+	 The new name of the port is 'reset_BAR'. (OPT-319)
+Information: Complementing port 'reset_BAR' in design 'array2string'.
+	 The new name of the port is 'reset'. (OPT-319)
+Information: In design 'perm', the register 'ary2str/Push_reg[0]' is removed because it is merged to 'ary2str/Dix_reg[21]'. (OPT-1215)
+Information: In design 'perm', the register 'ary2str/Dix_reg[20]' is removed because it is merged to 'ary2str/Dix_reg[19]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: In design 'perm', the register 'ary2str/Dix_reg[19]' is removed because it is merged to 'ary2str/Push_reg[1]'. (OPT-1215)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+Information: In design 'perm', the register 'ary2str/Dix_reg[17]' is removed because it is merged to 'ary2str/Push_reg[2]'. (OPT-1215)
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:42:47  446079.0      1.55   17052.8       0.0                              0.0000      0.00  
+    0:43:15  447250.0      1.36   16066.9       0.0                              0.0000      0.00  
+    0:43:15  447250.0      1.36   16066.9       0.0                              0.0000      0.00  
+    0:43:19  447254.5      1.33   16063.8       6.5                              0.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+Information: In design 'perm', the register 'ary2str/Dix_reg[14]' is removed because it is merged to 'ary2str/Push_reg[3]'. (OPT-1215)
+    0:50:39  447252.5      1.33   16062.2       6.5                              0.0000      0.00  
+    0:50:42  447733.5      1.32   15893.0       6.5                              0.0000      0.00  
+    0:50:44  448013.0      1.32   15794.5       6.5                              0.0000      0.00  
+    0:50:45  448253.5      1.32   15724.3       6.5                              0.0000      0.00  
+    0:50:47  448392.0      1.32   15665.3       6.5                              0.0000      0.00  
+    0:50:48  448524.0      1.32   15631.2       6.5                              0.0000      0.00  
+    0:50:50  448639.5      1.32   15600.7       6.5                              0.0000      0.00  
+    0:50:51  448721.5      1.32   15583.0       6.5                              0.0000      0.00  
+    0:50:53  448812.0      1.32   15561.3       6.5                              0.0000      0.00  
+    0:50:54  448866.5      1.32   15549.0       6.5                              0.0000      0.00  
+    0:50:56  448943.0      1.32   15536.4       6.5                              0.0000      0.00  
+    0:50:57  449031.0      1.32   15517.6       6.5                              0.0000      0.00  
+    0:50:59  449071.0      1.32   15507.8       6.5                              0.0000      0.00  
+    0:51:00  449094.5      1.32   15494.2       6.5                              0.0000      0.00  
+    0:51:02  449151.5      1.32   15485.6       6.5                              0.0000      0.00  
+    0:51:03  449203.0      1.32   15475.4       6.5                              0.0000      0.00  
+    0:51:05  449234.0      1.32   15471.7       6.5                              0.0000      0.00  
+    0:51:06  449269.5      1.32   15466.5       6.5                              0.0000      0.00  
+    0:51:08  449307.0      1.32   15457.5       6.5                              0.0000      0.00  
+    0:51:09  449351.0      1.32   15449.8       6.5                              0.0000      0.00  
+    0:51:11  449381.0      1.32   15444.6       6.5                              0.0000      0.00  
+    0:51:12  449407.5      1.32   15441.9       6.5                              0.0000      0.00  
+    0:51:14  449429.0      1.32   15438.7       6.5                              0.0000      0.00  
+    0:51:15  449477.0      1.32   15430.8       6.5                              0.0000      0.00  
+    0:51:17  449530.0      1.32   15425.7       6.5                              0.0000      0.00  
+    0:51:19  449569.5      1.32   15422.2       6.5                              0.0000      0.00  
+    0:51:20  449613.5      1.32   15415.0       6.5                              0.0000      0.00  
+    0:51:22  449653.0      1.32   15411.6       6.5                              0.0000      0.00  
+    0:51:24  449715.0      1.32   15406.8       6.5                              0.0000      0.00  
+    0:51:25  449761.5      1.32   15402.2       6.5                              0.0000      0.00  
+    0:51:27  449808.5      1.32   15396.9       6.5                              0.0000      0.00  
+    0:51:29  449877.5      1.32   15391.9       6.5                              0.0000      0.00  
+    0:51:31  449955.0      1.32   15386.1       6.5                              0.0000      0.00  
+    0:51:33  450069.5      1.32   15379.4       6.5                              0.0000      0.00  
+    0:51:35  450067.5      1.32   15379.3       6.5                              0.0000      0.00  
+    0:51:36  450074.5      1.32   15378.6       6.5                              0.0000      0.00  
+    0:51:46  450079.0      1.32   15272.7       6.5                              0.0000      0.00  
+    0:51:46  450079.0      1.32   15272.7       6.5                              0.0000      0.00  
+    0:51:57  457375.5      1.25   15012.1       6.5                              0.0000      0.00  
+    0:51:57  457375.5      1.25   15012.1       6.5                              0.0000      0.00  
+    0:51:59  459468.0      1.29   14827.5       6.5                              0.0000      0.00  
+    0:51:59  459468.0      1.29   14827.5       6.5                              0.0000      0.00  
+    0:52:03  462170.0      1.23   14816.7       6.5                              0.0000      0.00  
+    0:52:03  462170.0      1.23   14816.7       6.5                              0.0000      0.00  
+    0:52:08  463833.5      1.22   14511.1       6.5                              0.0000      0.00  
+    0:52:08  463833.5      1.22   14511.1       6.5                              0.0000      0.00  
+    0:52:15  467579.5      1.20   14463.1       6.5                              0.0000      0.00  
+    0:52:15  467579.5      1.20   14463.1       6.5                              0.0000      0.00  
+    0:52:20  469778.0      1.16   14201.0       6.5                              0.0000      0.00  
+    0:52:21  469778.0      1.16   14201.0       6.5                              0.0000      0.00  
+    0:52:26  472370.0      1.18   14223.7       6.5                              0.0000      0.00  
+    0:52:26  472370.0      1.18   14223.7       6.5                              0.0000      0.00  
+    0:52:32  474315.5      1.15   14007.6       6.5                              0.0000      0.00  
+    0:52:32  474315.5      1.15   14007.6       6.5                              0.0000      0.00  
+    0:52:37  476517.0      1.16   14031.7       6.5                              0.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:52:37  476517.0      1.16   14031.7       6.5                              0.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:52:41  476558.0      1.13   14005.7       0.0                              0.0000      0.00  
+    0:52:47  479028.0      1.17   14044.3       0.0                              0.0000      0.00  
+    0:52:49  478793.5      1.13   14002.5       0.0                              0.0000      0.00  
+    0:52:54  481643.5      1.16   14012.8       0.0                              0.0000      0.00  
+    0:52:55  481643.5      1.16   14012.8       0.0                              0.0000      0.00  
+    0:53:04  481642.0      1.16   14023.7       0.0                              0.0000      0.00  
+    0:53:04  481642.0      1.16   14023.7       0.0                              0.0000      0.00  
+    0:53:09  484124.5      1.17   14043.4       0.0                              0.0000      0.00  
+    0:53:09  484124.5      1.17   14043.4       0.0                              0.0000      0.00  
+    0:53:10  485034.0      1.14   14017.0       0.0                              0.0000      0.00  
+    0:53:10  485034.0      1.14   14017.0       0.0                              0.0000      0.00  
+    0:53:15  487183.0      1.17   14040.5       0.0                              0.0000      0.00  
+    0:53:15  487183.0      1.17   14040.5       0.0                              0.0000      0.00  
+    0:53:22  488582.0      1.14   13833.9       0.0                              0.0000      0.00  
+    0:53:22  488582.0      1.14   13833.9       0.0                              0.0000      0.00  
+    0:53:27  490827.0      1.16   13875.3       0.0                              0.0000      0.00  
+    0:53:27  490827.0      1.16   13875.3       0.0                              0.0000      0.00  
+    0:53:34  492486.5      1.16   13729.8       0.0                              0.0000      0.00  
+    0:53:34  492486.5      1.16   13729.8       0.0                              0.0000      0.00  
+    0:53:39  494745.0      1.15   13738.8       0.0                              0.0000      0.00  
+    0:53:39  494745.0      1.15   13738.8       0.0                              0.0000      0.00  
+    0:53:46  496666.5      1.12   13580.9       0.0                              0.0000      0.00  
+    0:53:46  496666.5      1.12   13580.9       0.0                              0.0000      0.00  
+    0:53:53  499004.0      1.14   13612.8       0.0                              0.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:54:01  499004.0      1.14   13612.8       0.0                              0.0000      0.00  
+    0:54:20  491161.0      1.12   13550.3       0.0                              0.0000      0.00  
+    0:54:22  490868.0      1.09   13499.1       0.0 level4/Q_reg[3][4][56]/D     0.0000      0.00  
+    0:54:24  490742.5      1.09   13475.1       0.0 level7/Q_reg[2][1][34]/D     0.0000      0.00  
+    0:54:26  490647.0      1.08   13460.0       0.0 level0/Q_reg[1][3][40]/D     0.0000      0.00  
+    0:54:28  490673.5      1.08   13448.0       0.0 level2/Q_reg[4][4][50]/D     0.0000      0.00  
+    0:54:30  490608.5      1.08   13435.5       0.0 level5/Q_reg[1][1][45]/D     0.0000      0.00  
+    0:54:32  490600.0      1.08   13424.8       0.0 level6/Q_reg[1][3][43]/D     0.0000      0.00  
+    0:54:34  490609.5      1.08   13417.7       0.0 level3/Q_reg[0][4][39]/D     0.0000      0.00  
+    0:54:36  490600.5      1.08   13408.7       0.0 level0/Q_reg[4][1][14]/D     0.0000      0.00  
+    0:54:38  490640.5      1.07   13402.4       0.0 level6/Q_reg[4][2][10]/D     0.0000      0.00  
+    0:54:39  490644.5      1.07   13396.6       0.0                              0.0000      0.00  
+    0:54:40  490598.5      1.07   13396.1       0.0                              0.0000      0.00  
+    0:54:40  490589.5      1.07   13396.1       0.0                              0.0000      0.00  
+    0:54:40  490589.5      1.07   13396.1       0.0                              0.0000      0.00  
+    0:54:50  490481.0      1.07   13397.8       0.0                              0.0000      0.00  
+    0:54:50  490358.0      1.07   13397.7       0.0                              0.0000      0.00  
+    0:54:51  490178.0      1.07   13398.8       0.0                              0.0000      0.00  
+    0:54:52  490015.0      1.07   13398.1       0.0                              0.0000      0.00  
+    0:54:52  489829.0      1.07   13397.8       0.0                              0.0000      0.00  
+    0:54:53  489701.0      1.07   13398.1       0.0                              0.0000      0.00  
+    0:55:56  489066.5      1.07   13398.3       0.0                              0.0000      0.00  
+    0:55:58  488706.0      1.07   13397.9       0.0                              0.0000      0.00  
+    0:55:59  488636.5      1.07   13397.7       0.0                              0.0000      0.00  
+    0:56:00  488574.0      1.07   13398.2       0.0                              0.0000      0.00  
+    0:56:01  488110.0      1.07   13387.0       0.0                              0.0000      0.00  
+    0:56:02  487803.0      1.07   13384.5       0.0                              0.0000      0.00  
+    0:56:02  487336.0      1.07   13383.5       0.0                              0.0000      0.00  
+    0:56:03  486924.5      1.07   13382.4       0.0                              0.0000      0.00  
+    0:56:04  486660.0      1.07   13381.4       0.0                              0.0000      0.00  
+    0:56:04  486625.0      1.07   13381.3       0.0                              0.0000      0.00  
+    0:56:16  489533.5      1.08   13155.5      26.7                              0.0000      0.00  
+    0:56:18  489458.5      1.06   13145.2      28.9                              0.0000      0.00  
+    0:56:21  489372.5      1.06   13139.4      32.9                              0.0000      0.00  
+    0:56:23  489290.0      1.06   13133.9      32.9                              0.0000      0.00  
+    0:56:25  489229.5      1.06   13130.7      32.9                              0.0000      0.00  
+    0:56:28  489151.0      1.06   13125.6      32.9                              0.0000      0.00  
+    0:56:30  489060.0      1.06   13120.8      32.9                              0.0000      0.00  
+    0:56:32  488986.0      1.06   13118.4      32.9                              0.0000      0.00  
+    0:56:35  488866.0      1.06   13115.6      32.9                              0.0000      0.00  
+    0:56:37  488751.0      1.06   13112.4      32.9                              0.0000      0.00  
+    0:56:39  488682.5      1.06   13110.8      32.9                              0.0000      0.00  
+    0:56:42  488602.0      1.06   13109.0      32.9                              0.0000      0.00  
+    0:56:44  488525.5      1.06   13106.8      32.9                              0.0000      0.00  
+    0:56:46  488432.5      1.06   13105.1      32.9                              0.0000      0.00  
+    0:56:49  488359.0      1.06   13103.8      32.9                              0.0000      0.00  
+    0:56:51  488270.0      1.06   13102.6      32.9                              0.0000      0.00  
+    0:56:53  488183.5      1.06   13100.2      32.9                              0.0000      0.00  
+    0:56:54  488120.5      1.06   13099.6      32.9                              0.0000      0.00  
+    0:56:56  488065.0      1.06   13098.5      32.9                              0.0000      0.00  
+    0:56:59  487987.0      1.06   13097.7      32.9                              0.0000      0.00  
+    0:57:00  487898.5      1.06   13096.8      32.9                              0.0000      0.00  
+    0:57:02  487820.0      1.06   13095.7      32.9                              0.0000      0.00  
+    0:57:04  487744.0      1.06   13094.8      32.9                              0.0000      0.00  
+    0:57:06  487670.5      1.06   13093.2      32.9                              0.0000      0.00  
+    0:57:08  487602.5      1.06   13092.8      32.9                              0.0000      0.00  
+    0:57:09  487521.5      1.06   13092.0      32.9                              0.0000      0.00  
+    0:57:11  487444.0      1.06   13091.2      32.9                              0.0000      0.00  
+    0:57:13  487364.5      1.06   13090.7      32.9                              0.0000      0.00  
+    0:57:14  487305.0      1.06   13090.4      32.9                              0.0000      0.00  
+    0:57:16  487247.5      1.06   13090.1      32.9                              0.0000      0.00  
+    0:57:18  487174.5      1.06   13089.2      32.9                              0.0000      0.00  
+    0:57:19  487081.5      1.06   13088.8      32.9                              0.0000      0.00  
+    0:57:21  487008.5      1.06   13088.3      32.9                              0.0000      0.00  
+    0:57:22  486935.0      1.06   13087.5      32.9                              0.0000      0.00  
+    0:57:24  486891.5      1.06   13086.9      32.9                              0.0000      0.00  
+    0:57:26  486807.5      1.06   13086.3      32.9                              0.0000      0.00  
+    0:57:27  486756.0      1.06   13086.3      32.9                              0.0000      0.00  
+    0:57:29  486678.0      1.06   13086.2      32.9                              0.0000      0.00  
+    0:57:31  486621.5      1.06   13085.8      32.9                              0.0000      0.00  
+    0:57:32  486536.5      1.06   13085.3      32.9                              0.0000      0.00  
+    0:57:34  486479.5      1.06   13084.9      32.9                              0.0000      0.00  
+    0:57:36  486411.0      1.06   13084.1      32.9                              0.0000      0.00  
+    0:57:38  486319.0      1.06   13083.7      32.9                              0.0000      0.00  
+    0:57:43  486266.0      1.06   13083.1      32.9                              0.0000      0.00  
+    0:57:46  486202.0      1.06   13082.8      32.9                              0.0000      0.00  
+    0:57:48  486150.5      1.06   13082.5      32.9                              0.0000      0.00  
+    0:57:51  486070.0      1.06   13082.3      32.9                              0.0000      0.00  
+    0:57:56  486023.0      1.06   13082.2      32.9                              0.0000      0.00  
+    0:58:04  485961.5      1.06   13081.8      32.9                              0.0000      0.00  
+    0:58:10  485924.5      1.06   13081.5      32.9                              0.0000      0.00  
+    0:58:21  485877.5      1.06   13081.5      32.9                              0.0000      0.00  
+    0:58:27  485853.5      1.06   13081.5      32.9                              0.0000      0.00  
+    0:58:35  485789.5      1.06   13081.0      32.9                              0.0000      0.00  
+    0:58:40  485737.5      1.06   13080.5      32.9                              0.0000      0.00  
+    0:58:42  485692.0      1.05   13080.6      32.9                              0.0000      0.00  
+    0:58:44  485635.5      1.05   13080.3      32.9                              0.0000      0.00  
+    0:58:46  485573.5      1.05   13079.9      32.9                              0.0000      0.00  
+    0:58:49  485515.0      1.05   13079.6      32.9                              0.0000      0.00  
+    0:58:52  485496.0      1.05   13079.6      32.9                              0.0000      0.00  
+    0:58:55  485447.0      1.05   13079.4      32.9                              0.0000      0.00  
+    0:58:58  485344.5      1.05   13078.7      32.9                              0.0000      0.00  
+    0:59:00  485344.5      1.05   13078.7      32.9                              0.0000      0.00  
+    0:59:01  486853.0      1.05   13060.8      45.9                              0.0000      0.00  
+    0:59:07  480917.0      1.05   13026.9      40.8                              0.0000      0.00  
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'perm' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 16034 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+create_clock clk -name clk -period 4.65
+1
+update_timing
+Information: Updating design information... (UID-85)
+Warning: Design 'perm' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+report_timing -max_paths 5
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : perm
+Version: K-2015.06-SP5-1
+Date   : Fri May  1 13:21:52 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: level4/Q_reg[2][0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: level5/Q_reg[1][2][24]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  level4/Q_reg[2][0][13]/CP (CFD2QXL)      0.00 #     0.00 r
+  level4/Q_reg[2][0][13]/Q (CFD2QXL)       0.48       0.48 r
+  U225055/Z (CENX1)                        0.19       0.67 r
+  U225056/Z (CEO3X2)                       0.25       0.93 f
+  U199149/Z (CENX2)                        0.16       1.09 r
+  U199471/Z (CENX1)                        0.20       1.29 r
+  U171112/Z (CNIVX1)                       0.13       1.41 r
+  U168028/Z (CND2X1)                       0.07       1.48 f
+  U199470/Z (CENX1)                        0.13       1.61 r
+  U238659/Z (CENX1)                        0.18       1.80 r
+  U172163/Z (CEN3X2)                       0.31       2.11 f
+  U172162/Z (CIVX4)                        0.08       2.19 r
+  U199474/Z (CENX4)                        0.18       2.37 r
+  U206372/Z (CENX2)                        0.20       2.58 r
+  U206371/Z (CND2X2)                       0.11       2.68 f
+  U165016/Z (CENX2)                        0.14       2.82 f
+  U164492/Z (CIVX3)                        0.05       2.87 r
+  U206369/Z (CENX1)                        0.16       3.03 r
+  U214922/Z (CEN3X2)                       0.35       3.38 f
+  U214921/Z (CENX2)                        0.21       3.59 r
+  U318483/Z (CENX1)                        0.21       3.79 r
+  U318484/Z (CIVX2)                        0.08       3.87 f
+  U214957/Z (CNR2X2)                       0.07       3.94 r
+  U331532/Z (CENX1)                        0.15       4.09 r
+  level5/Q_reg[1][2][24]/D (CFD2QX2)       0.00       4.09 r
+  data arrival time                                   4.09
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  level5/Q_reg[1][2][24]/CP (CFD2QX2)      0.00       4.40 r
+  library setup time                      -0.20       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -4.09
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: level4/Q_reg[2][0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: level5/Q_reg[2][3][12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  level4/Q_reg[2][0][13]/CP (CFD2QXL)      0.00 #     0.00 r
+  level4/Q_reg[2][0][13]/Q (CFD2QXL)       0.48       0.48 r
+  U225055/Z (CENX1)                        0.19       0.67 r
+  U225056/Z (CEO3X2)                       0.25       0.93 f
+  U199149/Z (CENX2)                        0.16       1.09 r
+  U165185/Z (CIVX3)                        0.11       1.20 f
+  U165186/Z (CIVX4)                        0.05       1.26 r
+  U196705/Z (CENX2)                        0.13       1.39 r
+  U199458/Z (CIVX2)                        0.09       1.47 f
+  U164670/Z (CENX2)                        0.13       1.61 r
+  U164671/Z (CENX2)                        0.16       1.77 r
+  U185542/Z (CEO3X2)                       0.33       2.10 f
+  U169295/Z (CENX2)                        0.19       2.29 r
+  U169294/Z (CENX1)                        0.21       2.50 r
+  U199224/Z (CIVX2)                        0.11       2.61 f
+  U164669/Z (CNR2X4)                       0.08       2.68 r
+  U177437/Z (CENX2)                        0.16       2.84 r
+  U177436/Z (CENX2)                        0.16       3.00 r
+  U207581/Z (CEO3X2)                       0.38       3.38 f
+  U198327/Z (CEOX2)                        0.18       3.56 f
+  U198325/Z (CIVX4)                        0.07       3.63 r
+  U176878/Z (CENX1)                        0.18       3.81 r
+  U180289/Z (CIVX1)                        0.07       3.88 f
+  U165454/Z (CND2X1)                       0.06       3.94 r
+  U334609/Z (CENX1)                        0.15       4.08 r
+  level5/Q_reg[2][3][12]/D (CFD2QX1)       0.00       4.08 r
+  data arrival time                                   4.08
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  level5/Q_reg[2][3][12]/CP (CFD2QX1)      0.00       4.40 r
+  library setup time                      -0.21       4.19
+  data required time                                  4.19
+  -----------------------------------------------------------
+  data required time                                  4.19
+  data arrival time                                  -4.08
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: level4/Q_reg[2][0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: level5/Q_reg[3][0][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  level4/Q_reg[2][0][13]/CP (CFD2QXL)      0.00 #     0.00 r
+  level4/Q_reg[2][0][13]/Q (CFD2QXL)       0.48       0.48 r
+  U225055/Z (CENX1)                        0.19       0.67 r
+  U225056/Z (CEO3X2)                       0.25       0.93 f
+  U199149/Z (CENX2)                        0.16       1.09 r
+  U199471/Z (CENX1)                        0.20       1.29 r
+  U171112/Z (CNIVX1)                       0.13       1.41 r
+  U168028/Z (CND2X1)                       0.07       1.48 f
+  U199470/Z (CENX1)                        0.13       1.61 r
+  U238659/Z (CENX1)                        0.18       1.80 r
+  U172163/Z (CEN3X2)                       0.31       2.11 f
+  U172162/Z (CIVX4)                        0.08       2.19 r
+  U199474/Z (CENX4)                        0.18       2.37 r
+  U199490/Z (CENX2)                        0.21       2.58 r
+  U198644/Z (CND2X2)                       0.12       2.70 f
+  U164568/Z (CENX2)                        0.14       2.84 r
+  U200606/Z (CENX1)                        0.19       3.02 r
+  U308568/Z (CEO3X2)                       0.42       3.44 f
+  U198648/Z (CENX4)                        0.15       3.59 r
+  U162205/Z (CENX1)                        0.21       3.80 r
+  U166374/Z (CND2X1)                       0.12       3.92 f
+  U328647/Z (CENX1)                        0.14       4.06 f
+  level5/Q_reg[3][0][18]/D (CFD2QX1)       0.00       4.06 f
+  data arrival time                                   4.06
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  level5/Q_reg[3][0][18]/CP (CFD2QX1)      0.00       4.40 r
+  library setup time                      -0.23       4.17
+  data required time                                  4.17
+  -----------------------------------------------------------
+  data required time                                  4.17
+  data arrival time                                  -4.06
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: level4/Q_reg[2][0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: level5/Q_reg[3][3][55]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  level4/Q_reg[2][0][13]/CP (CFD2QXL)      0.00 #     0.00 r
+  level4/Q_reg[2][0][13]/Q (CFD2QXL)       0.48       0.48 r
+  U225055/Z (CENX1)                        0.19       0.67 r
+  U225056/Z (CEO3X2)                       0.25       0.93 f
+  U199149/Z (CENX2)                        0.16       1.09 r
+  U199471/Z (CENX1)                        0.20       1.29 r
+  U171112/Z (CNIVX1)                       0.13       1.41 r
+  U168028/Z (CND2X1)                       0.07       1.48 f
+  U199470/Z (CENX1)                        0.13       1.61 r
+  U238659/Z (CENX1)                        0.18       1.80 r
+  U172163/Z (CEN3X2)                       0.31       2.11 f
+  U172162/Z (CIVX4)                        0.08       2.19 r
+  U199474/Z (CENX4)                        0.18       2.37 r
+  U206372/Z (CENX2)                        0.20       2.58 r
+  U206371/Z (CND2X2)                       0.11       2.68 f
+  U165016/Z (CENX2)                        0.14       2.82 f
+  U164492/Z (CIVX3)                        0.05       2.87 r
+  U206369/Z (CENX1)                        0.16       3.03 r
+  U214922/Z (CEN3X2)                       0.35       3.38 f
+  U214921/Z (CENX2)                        0.21       3.59 r
+  U321163/Z (CENX1)                        0.22       3.81 r
+  U322400/Z (CND2X1)                       0.12       3.92 f
+  U322401/Z (CENX1)                        0.14       4.07 f
+  level5/Q_reg[3][3][55]/D (CFD2QX2)       0.00       4.07 f
+  data arrival time                                   4.07
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  level5/Q_reg[3][3][55]/CP (CFD2QX2)      0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -4.07
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: level4/Q_reg[2][0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: level5/Q_reg[2][1][58]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  level4/Q_reg[2][0][13]/CP (CFD2QXL)      0.00 #     0.00 r
+  level4/Q_reg[2][0][13]/Q (CFD2QXL)       0.48       0.48 r
+  U225055/Z (CENX1)                        0.19       0.67 r
+  U225056/Z (CEO3X2)                       0.25       0.93 f
+  U199149/Z (CENX2)                        0.16       1.09 r
+  U199471/Z (CENX1)                        0.20       1.29 r
+  U171112/Z (CNIVX1)                       0.13       1.41 r
+  U168028/Z (CND2X1)                       0.07       1.48 f
+  U199470/Z (CENX1)                        0.14       1.63 f
+  U238659/Z (CENX1)                        0.17       1.80 f
+  U172163/Z (CEN3X2)                       0.28       2.08 r
+  U172162/Z (CIVX4)                        0.08       2.16 f
+  U198339/Z (CENX4)                        0.17       2.33 f
+  U248305/Z (CENX1)                        0.19       2.52 f
+  U167557/Z (CNR2X1)                       0.11       2.63 r
+  U314426/Z (CENX1)                        0.19       2.83 r
+  U314709/Z (CENX1)                        0.19       3.02 r
+  U314716/Z (CEN3X2)                       0.35       3.37 f
+  U320135/Z (CENX2)                        0.22       3.58 r
+  U320136/Z (CENX1)                        0.23       3.81 r
+  U333594/Z (CND2X1)                       0.11       3.92 f
+  U333595/Z (CENX1)                        0.14       4.07 f
+  level5/Q_reg[2][1][58]/D (CFD2QX2)       0.00       4.07 f
+  data arrival time                                   4.07
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  level5/Q_reg[2][1][58]/CP (CFD2QX2)      0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -4.07
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+1
+write -hierarchy -format verilog -output perm_gates.v
+Writing verilog file '/home/014512836/pal/287/proj02/perm_gates.v'.
+1
+quit
+
+Thank you...

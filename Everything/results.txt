@@ -1,0 +1,10 @@
+runsha3 script run started on Fri May  1 12:15:23 2020
+run on machine coe-ee-cad7.sjsuad.sjsu.edu
+
+Run with a clock period of 4.65
+options syn False gates False
+VCS simulation worked
+NCverilog simulation worked
+Synthesis finished OK
+Gate level simulation worked
+Completed the sha3 run

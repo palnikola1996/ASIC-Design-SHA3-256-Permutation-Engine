@@ -1,0 +1,13 @@
+Project Group 15:-
+Statement Of Completion
+
+1) We designed all 5 algorithms and the modulo functions seperately and tested it one by one using our testbench.
+2) Once all the 5 algorithms were clean we tested our output for round 0 using our testbench.
+3) Once round 0 was clean we implemented all 24 round at once without pipelining with only 1 test case to see if we get the expected output as per the sha3_tests.txt 
+4) We created 2 wrappers :-
+	I)  one to take input of 200 bits every clk cycle using shift-register and convert string to 3-D array.
+	II) one to convert 3-D array back to string and throw output of 200 bits every clk cycle using shift-registers.
+5) We divided all the 24 rounds in 8 levels of pipeline. Hence, we had 3 rounds every level so we can do the full permutation in 8 clock cycles.
+6) The whole design is modularized to make debugging easy. i.e all the algorithm, 2 wrappers and the mod functions have seperate ".sv" files.
+7) We have made a package file "my_pkg.sv" which contains path to all the ".sv" and this package file has been included in the main "perm.sv" file.
+8) For our team the whole logic which we wanted to apply worked properly and the design got synthesised with positive slack of 0.11 as per the given constraints.
